@@ -1,0 +1,47 @@
+ODM 
+  - Object Document Mapper 
+    - a tool that translates objects in code to documents for use in document-based databases such as MongoDB 
+
+Mongoose 
+  - is an 'Object Document Mapper (ODM)' library for Node.JS and MongoDB. 
+  - it provides straightforward way to interact with MongoDB and define Schemas, models and perform database operations using JavaScript
+
+Schema 
+  - is a representation of document's structure. It also contains document's expected properties and data types
+
+Models 
+  - a programming interface for querying or manipulating a database. A mongoose model contails methods that simplify such operations
+
+Separation of Concerns 
+ 	 	- better code readability
+  		- improved scalability
+  		- better code maintainanbility
+
+  	- models 
+  	  - contains 'what' objects are needed in our API
+  	      - courses
+  	      - users
+  	  - object schemas and relationships are defined here 
+  	    - schemas are JSON objects that defined the structure and content of documents
+
+  	  example:
+  	    const courseSchema = new mongoose.Schema({
+  	      name: {},
+  	      description: {},
+  	      price:{},
+  	      isActive: {},
+  	      createdOn: {},
+  	      enrollees: []
+
+  	    })
+
+  	 - controllers
+  	    - contains instruction on HOW your API will perform its intended tasks
+  	    - mongoose model queries are used here, examples:
+  	        - Model.find()
+  	        - Model.findById()
+  	        - Model.findByIdAnd
+  	 - routes 
+  	     - defines WHEN particular controllers will be send
+  	     - a specific controller action will be called when specific HTTP method is received on a specific API endpoint
+
